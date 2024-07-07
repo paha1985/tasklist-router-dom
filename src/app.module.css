@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+	background: repeating-linear-gradient(45deg, #aaa, #aaa 2px, #ccc 2px, #ccc 6px);
+	font-family: 'IBM Plex Mono', monospace;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	height: 20%;
+	width: 1000px;
+	max-width: calc(100% - 40px);
+	margin: 20px auto;
+	padding: 20px;
+	border: 2px solid;
+	background: #ddd;
+	text-align: center;
+	box-shadow:
+		1px 1px,
+		2px 2px,
+		3px 3px,
+		4px 4px;
+}
+
+.todos {
+	height: 80%;
+	width: 1000px;
+	max-width: calc(100% - 40px);
+	margin: 20px auto;
+	padding: 20px;
+	border: 2px solid;
+	display: grid;
+	grid-template-columns: repeat(6, 15.25%);
+	grid-gap: 0 1.67%;
+	border: 2px solid;
+	background: #ddd;
+	box-shadow:
+		1px 1px,
+		2px 2px,
+		3px 3px,
+		4px 4px;
+}
+
+button {
+	appearance: none;
+	border: inherit;
+	color: inherit;
+	padding: 5px;
+	text-align: center;
+	background: #eee;
+}
+
+.todos button,
+.task button {
+	font-size: 12px;
+	margin-right: 15px;
+	float: right;
+	box-shadow: 2px 2px;
+}
+
+.todos button:hover {
+	background: #666;
+	border-color: #666;
+	color: white;
+}
+
+.header button {
+	font-size: 24px;
+	box-shadow: 2px 2px;
+}
+
+button:disabled {
+	color: gray;
+}
+
+.header input {
+	margin-right: 20px;
+	font-size: 26px;
+	border: 2px solid;
+}
+
+.header button:hover,
+.task button:hover {
+	background: #666;
+	border-color: #666;
+	color: white;
+}
+
+.todos > div {
+	margin-bottom: 20px;
+	padding: 15px;
+	background-color: #f7f7f7;
+	border: 2px solid;
+	grid-column: 1 / 7;
+	box-shadow: inherit;
+}
+
+.truncate {
+	width: 100%;
+	padding: 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-decoration: none;
+}
+
+.truncate a {
+	text-decoration: none;
+}
+
+.task {
+	height: 500px;
+	width: 1000px;
+	/* max-width: calc(100% - 40px); */
+	margin: 20px auto;
+	padding: 20px;
+	border: 2px solid;
+	/* display: grid; */
+	/* grid-template-columns: repeat(6, 15.25%); */
+	grid-gap: 0 1.67%;
+	border: 2px solid;
+	background: #ddd;
+	box-shadow:
+		1px 1px,
+		2px 2px,
+		3px 3px,
+		4px 4px;
+}
+
+.task_header,
+.task_footer {
+	height: 10%;
+	display: inline-block;
+}
+
+.task_body {
+	height: 80%;
+	align-items: center;
+}
+
+.loader {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 25px;
+	height: 25px;
+	border: 5px solid gray;
+	border-radius: 50%;
+	border-left-color: transparent;
+	animation: loader 1s infinite;
+}
+
+@keyframes loader {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
